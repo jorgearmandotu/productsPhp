@@ -6,7 +6,7 @@
                 show_404();
             }
 
-            $data['title'] = ucfirst($page);
+            $data['title'] = ucfirst('Gestion Productos');
 
             $this->load->view('templates/header', $data);
             $this->load->view('pages/'.$page, $data);

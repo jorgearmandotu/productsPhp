@@ -1,1 +1,5 @@
-<h1>home</h1>
+<input type='text'>
+<button>search</button>
+<button>+</button>
+<br />
+<?php
