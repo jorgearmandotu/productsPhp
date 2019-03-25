@@ -6,6 +6,19 @@ class Products_model extends CI_Model{
         $this->load->database();
     }
 
+    public function set_product()
+    {
+        $this->load->helper('url');
+        $slug = url_title($this->input->post('title'), 'dash', TRUE);
+
+        $data = array(
+            'product' => $this->input->post('product'),
+            'unit' => $this->input->post('unit'),
+            'category' => $this->input->post('category'),
+        );
+        return $this->db->insert('products', $data);
+    }
+
     public function get_product($slug = FALSE)
     {
         if($slug === FALSE)
