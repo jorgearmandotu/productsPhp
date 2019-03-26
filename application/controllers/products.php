@@ -56,7 +56,8 @@ class Products extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        $data['title'] = 'Ingresar nuevo Producto';
+		$data['title'] = 'Ingresar nuevo Producto';
+		$data['categories'] = $this->category_model->get_categories();
 
         $this->form_validation->set_rules('product', 'nombre de Producto es necesario', 'required');
         $this->form_validation->set_rules('unit', 'unidad de Producto es necesario', 'required');
@@ -66,7 +67,7 @@ class Products extends CI_Controller {
         {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navbar');
-            $this->load->view('products/create');
+            $this->load->view('products/create', $data);
             $this->load->view('templates/footer');
         }
         else

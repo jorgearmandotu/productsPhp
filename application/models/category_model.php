@@ -16,6 +16,12 @@ class Category_model extends CI_Model{
             'category' => $this->input->post('category'),
         );
         return $this->db->insert('categories', $data);
+	}
+	
+	public function get_categories()
+    {
+        $query = $this->db->get('categories');
+        return $query->result_array();
     }
 }
 ?>

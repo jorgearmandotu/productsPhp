@@ -14,10 +14,11 @@ echo form_open('products/create');
         <input type='text' name='unit' placeholder='(gr, ml, und, ...)' /></li>
     <li>
         <label for='phone'>Categoria: </label>
-		<select>
-			<option value=''>hola</option>
+		<select name="category">
+		<?php foreach($categories as $category): ?>
+			<option value='<?php echo $category['id'] ?>'><?php echo $category['category']; ?></option>
+		<?php endforeach ?>
 		</select>
-        <input type='text' name='category' placeholder='categoria producto' /></li>
     <li>
         <input type='submit' name='submit' value='Crear' /></li>
 </ul>
