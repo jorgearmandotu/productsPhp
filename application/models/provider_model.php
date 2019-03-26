@@ -19,5 +19,11 @@ class Provider_model extends CI_Model{
         );
         return $this->db->insert('providers', $data);
     }
+
+    public function get_providers()
+    {
+        $query = $this->db->get('providers');
+        return $query->result_array();
+    }
 }
 ?>
