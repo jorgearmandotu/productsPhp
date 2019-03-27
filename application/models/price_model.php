@@ -20,6 +20,26 @@ class price_model extends CI_Model {
         return $this->db->insert('prices', $data);
     }
 
+    public function set_presentation()
+    {
+        $this->load->helper('url');
+
+        $data = array(
+            'presentation' => $this->input->post('presentation'),
+        );
+        return $this->db->insert('presentations', $data);
+    }
+
+    public function set_brand()
+    {
+        $this->load->helper('url');
+
+        $data = array(
+            'brand' => $this->input->post('brand'),
+        );
+        return $this->db->insert('brands', $data);
+    }
+
     public function get_presentations(){
         $query = $this->db->get('presentations');
         return $query->result_array();
