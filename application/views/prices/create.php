@@ -6,7 +6,6 @@ echo '<div class="alert alert-danger" role="alert">
 <h3>'.validation_errors().'</h3>
 </div>';
 ?>
-<div class='container'>
 <?php
 echo form_open('prices/create','class=""');
 ?>
@@ -22,10 +21,8 @@ echo form_open('prices/create','class=""');
                 <?php endforeach ?>
             </select>
         </div>
-        <div class='col-auto'>
-            <button type='button' class='btn btn-info btn-sm'>Nuevo</button>
-        </div>
     </div>
+    <br />
     <div class='form-row'>
     <div class='col-auto'>
         <label for='presentation'>presentacion: </label>
@@ -38,9 +35,13 @@ echo form_open('prices/create','class=""');
         </select>
     </div>
     <div class='col-auto'>
-        <button type='button' class='btn btn-info btn-sm' data-toggle="modal" data-target="#presentation">nuevo</button>
+        <button type='button' class='btn btn-info btn-sm' data-toggle="modal" data-target="#presentation" >nuevo</button>
+    </div>
+    <div class='col-auto'>
+        <button type='button' class='btn btn-success btn-sm' onclick = "location.reload();">reload</button>
     </div>
     </div>
+    <br />
     <div class='form-row'>
     <div class='col-auto'>
         <label for='brand'>Marca: </label>
@@ -52,11 +53,8 @@ echo form_open('prices/create','class=""');
             <?php endforeach ?>
         </select>
     </div>
-    <div class='col-auto'>
-        <button type='button' class='btn btn-info btn-sm'>Nuevo</button>
     </div>
-    </div>
-    
+    <br />
     <div class='form-row'>
     <div class='col-auto'>
         <label for='price_unit'>precio unitario: </label>
@@ -65,6 +63,7 @@ echo form_open('prices/create','class=""');
         <input type='number' name='price_unit' class='form-control' />
     </div>
     </div>
+    <br />
     <div class='form-row'>
     <div class='col-auto'>
         <label for='provider'>Proveedor: </label>
@@ -76,18 +75,13 @@ echo form_open('prices/create','class=""');
             <?php endforeach ?>
         </select>
     </div>
-    <div class='col-auto'>
-        <button type='button' class='btn btn-info btn-sm'>Nuevo</button>
     </div>
-    </div>
-    <div class='form-row'>
-        <input type='submit' name='submit' value='Crear' class='btn btn-primary'/>
+    <br />
+    <div class='form-group row'>
+       <div class='col-sm-8'> <input type='submit' name='submit' value='Ingresar' class='btn btn-primary btn-sm btn-block'/></div>
     </div>
 </ul>
 </form>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#presentation" data-whatever="@fat">Open modal for @fat</button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
 
 <div class="modal fade" id="presentation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -116,34 +110,38 @@ echo form_open('prices/create','class=""');
   </div>
 </div>
 
-
+<br />
 <?php
 //echo '<h3>'.validation_errors().'</h3>';
 echo form_open('presentation/create', 'class="form-inline"');
 ?>
-<ul>
-    <li>
+<div class='form-group row'>
+    <div class='col-auto'>
         <label for='presentation'>Presentacion: </label>
+    </div>
+    <div class='col-auto'>
         <input type='text' name='presentation' class='form-control' />
-    </li>
-    <li>
-        <input type='submit' name='submit' value='Crear' class='btn btn-primary' />
-    </li>
-</ul>
+    </div>
+    <div class='col-auto'>
+        <input type='submit' name='submit' value='Crear' class='btn btn-primary btn-sm' />
+    </div>
+</div>
 </form>
-
+<br />
 <?php
 //echo '<h3>'.validation_errors().'</h3>';
 echo form_open('brand/create');
 ?>
-<ul>
-    <li>
+<div class='form-group row'>
+    <div class='col-auto'>
         <label for='brand'>Marca: </label>
-        <input type='text' name='brand' class='form-control' />
-    </li>
-    <li>
-        <input type='submit' name='submit' value='Crear' class='btn btn-primary' />
-    </li>
-</ul>
-</form>
+    </div>
+    <div class='col-auto'>
+        <input type='text' name='brand' class='form-control form-sm' />
+    </div>
+    <div class='col-auto'>
+        <input type='submit' name='submit' value='Crear' class='btn btn-primary btn-sm' />
+    </div>
 </div>
+</form>
+

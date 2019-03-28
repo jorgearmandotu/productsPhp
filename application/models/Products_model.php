@@ -61,11 +61,13 @@ class Products_model extends CI_Model{
         
         if($slug === FALSE)
         {
-            $query = $this->db->get('products');
+            $this->db->get('products');
+            $query = $this->db->order_by('product DESC');
             return $query->result_array();
         }
         $this->db->from('products');
         $this->db->like('product', $slug);
+        $this->db->order_by('product', 'DESC');
         $query = $this->db->get();
         //$query = $this->db->get_where('products', array('product'=> $slug));
         return $query->result_array();

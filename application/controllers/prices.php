@@ -33,6 +33,7 @@ class Prices extends CI_Controller{
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navbar');
             $this->load->view('prices/create', $data);
+            $this->load->helper('url');
             $this->load->view('templates/footer'); 
         }
         else
@@ -44,6 +45,8 @@ class Prices extends CI_Controller{
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navbar');
             $this->load->view('products/index', $data);
+            $this->load->helper('url');
+            $this->load->view('templates/footer'); 
             $this->load->view('templates/footer');
         }
     }
@@ -65,6 +68,8 @@ class Prices extends CI_Controller{
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navbar');
             $this->load->view('prices/create', $data);
+            $this->load->helper('url');
+            $this->load->view('templates/footer'); 
             $this->load->view('templates/footer');
         }
         else
@@ -74,6 +79,8 @@ class Prices extends CI_Controller{
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navbar');
             $this->load->view('prices/create', $data);
+            $this->load->helper('url');
+            $this->load->view('templates/footer'); 
             $this->load->view('templates/footer');
         }
     }
@@ -95,6 +102,8 @@ class Prices extends CI_Controller{
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navbar');
             $this->load->view('prices/create', $data);
+            $this->load->helper('url');
+            $this->load->view('templates/footer'); 
             $this->load->view('templates/footer');
         }
         else
@@ -104,6 +113,8 @@ class Prices extends CI_Controller{
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navbar');
             $this->load->view('prices/create', $data);
+            $this->load->helper('url');
+            $this->load->view('templates/footer'); 
             $this->load->view('templates/footer');
         }
     }
