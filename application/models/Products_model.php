@@ -72,5 +72,42 @@ class Products_model extends CI_Model{
         //$query = $this->db->get_where('products', array('product'=> $slug));
         return $query->result_array();
     }
+
+    public function update_vlrs_product(){
+        $this->load->helper('url');
+        $price_unit = $this->input->post('price_unit');
+        $promocion = $this->input->post('promocion');
+
+        if($price_unit == '' && $promocion == ''){
+            //no se actulaiza nada
+            $data = array();
+        }elseif($promocion == '' || $price_unit == ''){
+            if($promocion == ''){
+                //update precio
+                $data = array(
+                    'price_unit' => $price_unit
+                );
+            }else{
+                //update promocion
+                $data = array(
+                    'promocion' => $promocion
+                );
+            }
+        }else{
+            //update precio and promocion
+            $data = array(
+                'price_unit' => $price_unit,
+                'promocion' => $promocion,
+            );
+        }
+        $dataWhere = array(
+            'product'=> $this->input->post('product'),
+            'brand'=> $this->input->post('brand'),
+            'provider'=> $this->input->post('provider'),
+            'presentation'=> $this->input->post('presentation'),
+        );
+        $this->db->where($dataWhere);
+        return $this->db->update('prices', $data);
+    }
 }
 ?>

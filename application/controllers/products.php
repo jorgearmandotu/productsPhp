@@ -38,18 +38,47 @@ class Products extends CI_Controller {
     }
     public function view($slug = NULL)
     {
-        $data['product_item'] = $this->products_model->get_product($slug);
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        
 
-        if(empty($data['product_item']))
+        $this->form_validation->set_rules('product', 'el producto ', 'required');
+        $this->form_validation->set_rules('brand', 'la marca', 'required');
+        $this->form_validation->set_rules('provider', 'el proveedor', 'required');
+        $this->form_validation->set_rules('presentation', 'la presentacion', 'required');
+        //$this->form_validation->set_rules('price_unit', 'la presentacion', 'required');
+        //$this->form_validation->set_rules('promocion', 'la presentacion', 'required');
+
+        if($this->form_validation->run() === FALSE)
         {
-            show_404();
-        }
-        $data['title'] = $data['product_item'][0]['product'];
+            $data['product_item'] = $this->products_model->get_product($slug);
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/navbar');
-        $this->load->view('products/view', $data);
-        $this->load->view('templates/footer');
+            if(empty($data['product_item']))
+            {
+                show_404();
+            }
+            $data['title'] = $data['product_item'][0]['product'];
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/navbar');
+            $this->load->view('products/view', $data);
+            $this->load->view('templates/footer');
+        }
+        else
+        {
+            $this->products_model->update_vlrs_product();
+            $data['product_item'] = $this->products_model->get_product($slug);
+
+            if(empty($data['product_item']))
+            {
+                show_404();
+            }
+            $data['title'] = $data['product_item'][0]['product'];
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/navbar');
+            $this->load->view('products/view', $data);
+            $this->load->view('templates/footer');
+        }
+        
     }
 
     public function createProduct() {
