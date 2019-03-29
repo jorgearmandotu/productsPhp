@@ -80,7 +80,7 @@ class Products_model extends CI_Model{
 
         if($price_unit == '' && $promocion == ''){
             //no se actulaiza nada
-            $data = array();
+            return NULL;
         }elseif($promocion == '' || $price_unit == ''){
             if($promocion == ''){
                 //update precio
