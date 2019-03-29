@@ -4,13 +4,14 @@ echo form_open('products');
 ?>
 <div class='form-group row'>
     <div class='col-auto'>
-    <input type="text" name="txtsearch" class='form-control' />
+    <input type="text" name="txtsearch" class='form-control form-control-sm' placeholder='search' />
     </div>
     <div class='col-auto'>
-    <input type="submit" name="submit" value="Buscar" class='form-control btn-info' />
+    <input type="submit" name="submit" value="Buscar" class='form-control btn-info btn-sm' />
     </div>
 </div>
 </form>
+<hr>
 <div class='list-group'>
 <?php foreach ($productsList as $product_item): ?>
     <a class="list-group-item list-group-item-action" href="<?php echo site_url('products/'.$product_item['id']); ?>">

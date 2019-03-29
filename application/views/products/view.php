@@ -1,3 +1,4 @@
+<h3><?php echo $title ?></h3>
 <table class='table table-striped table-sm table-responsive'>
     <thead>
         <tr>
@@ -21,7 +22,7 @@ foreach($product_item as $product):
             <td><?php echo $product['presentation']; ?></td>
             <td><?php echo number_format($product['promocion'], 2, ',', '.') ?></td>
         </tr>
-        <?php echo form_open('products/view/'.$product['product']) ?>
+        <?php echo form_open('products/view/'.$product['idProduct']) ?>
         <input name='brand' type='hidden' value='<?php echo $product['idBrand'] ?>'>
         <input name='presentation' type='hidden' value='<?php echo $product['idPresentation'] ?>'>
         <input name='provider' type='hidden' value='<?php echo $product['idProvider'] ?>'>
