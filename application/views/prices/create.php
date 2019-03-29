@@ -10,7 +10,7 @@ echo '<div class="alert alert-danger" role="alert">
 echo form_open('prices/create','class=""');
 ?>
 
-    <div class='form-row'>
+    <div class='form-group row'>
         <div class='col-auto'>
             <label for='product'>Producto: </label>
         </div>
@@ -22,8 +22,8 @@ echo form_open('prices/create','class=""');
             </select>
         </div>
     </div>
-    <br />
-    <div class='form-row'>
+    
+    <div class='form-group row'>
     <div class='col-auto'>
         <label for='presentation'>presentacion: </label>
     </div>
@@ -41,8 +41,8 @@ echo form_open('prices/create','class=""');
         <button type='button' class='btn btn-success btn-sm' onclick = "location.reload();">reload</button>
     </div>
     </div>
-    <br />
-    <div class='form-row'>
+    
+    <div class='form-group row'>
     <div class='col-auto'>
         <label for='brand'>Marca: </label>
     </div>
@@ -54,8 +54,8 @@ echo form_open('prices/create','class=""');
         </select>
     </div>
     </div>
-    <br />
-    <div class='form-row'>
+    
+    <div class='form-group row'>
     <div class='col-auto'>
         <label for='price_unit'>precio unitario: </label>
     </div>
@@ -63,8 +63,17 @@ echo form_open('prices/create','class=""');
         <input type='number' name='price_unit' class='form-control' />
     </div>
     </div>
-    <br />
-    <div class='form-row'>
+
+    <div class='form-group row'>
+    <div class='col-auto'>
+        <label for='promocion'>Precio en oferta: </label>
+    </div>
+    <div class='col-auto'>
+        <input type='number' name='promocion' class='form-control' />
+    </div>
+    </div>
+    
+    <div class='form-group row'>
     <div class='col-auto'>
         <label for='provider'>Proveedor: </label>
     </div>
@@ -76,9 +85,9 @@ echo form_open('prices/create','class=""');
         </select>
     </div>
     </div>
-    <br />
-    <div class='form-group row'>
-       <div class='col-sm-8'> <input type='submit' name='submit' value='Ingresar' class='btn btn-primary btn-sm btn-block'/></div>
+
+    <div class='form-row'>
+       <div class='col-sm-5'> <input type='submit' name='submit' value='Ingresar' class='btn btn-primary btn-sm btn-block'/></div>
     </div>
 </ul>
 </form>
@@ -110,10 +119,10 @@ echo form_open('prices/create','class=""');
   </div>
 </div>
 
-<br />
+<hr>
 <?php
 //echo '<h3>'.validation_errors().'</h3>';
-echo form_open('presentation/create', 'class="form-inline"');
+echo form_open('presentation/create');
 ?>
 <div class='form-group row'>
     <div class='col-auto'>
@@ -122,12 +131,15 @@ echo form_open('presentation/create', 'class="form-inline"');
     <div class='col-auto'>
         <input type='text' name='presentation' class='form-control' />
     </div>
-    <div class='col-auto'>
-        <input type='submit' name='submit' value='Crear' class='btn btn-primary btn-sm' />
+</div>
+
+<div class='form-row'>
+    <div class='col-sm-5'>
+        <input type='submit' name='submit' value='Agregar presentacion' class='btn btn-primary btn-sm btn-block' />
     </div>
 </div>
 </form>
-<br />
+<hr>
 <?php
 //echo '<h3>'.validation_errors().'</h3>';
 echo form_open('brand/create');
@@ -139,8 +151,10 @@ echo form_open('brand/create');
     <div class='col-auto'>
         <input type='text' name='brand' class='form-control form-sm' />
     </div>
-    <div class='col-auto'>
-        <input type='submit' name='submit' value='Crear' class='btn btn-primary btn-sm' />
+</div>
+<div class='form-row'>
+    <div class='col-sm-5'>
+        <input type='submit' name='submit' value='Crear' class='btn btn-primary btn-sm btn-block' />
     </div>
 </div>
 </form>

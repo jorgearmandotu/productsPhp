@@ -16,6 +16,7 @@ class price_model extends CI_Model {
             'presentation' => $this->input->post('presentation'),
             'provider' => $this->input->post('provider'),
             'price_unit' => $this->input->post('price_unit'),
+            'promocion' => $this->input->post('promocion'),
         );
         return $this->db->insert('prices', $data);
     }

@@ -59,6 +59,7 @@ p {
 	<div id="container">
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
+		<a href = '/products'><button class='btn btn-primary' type='button'>Regresar</button></a>
 	</div>
 </body>
 </html>

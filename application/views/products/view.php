@@ -1,14 +1,27 @@
-<div class='list-group'>
+<table class='table table-striped table-sm table-responsive'>
+    <thead>
+        <tr>
+            <th scope='col'>Marca</th>
+            <th scope='col'>Unidad</th>
+            <th scope='col'>$ Precio</th>
+            <th scope='col'>Proveedor</th>
+            <th scope='col'>Presentacion</th>
+            <th scope='col'>$ Oferta</th>
+        </tr>
+    </thead>
+    <tbody>
 <?php
-$i=0;
 foreach($product_item as $product): 
-    $i++;
-    if($i%2 === 0){
-        echo '<span class="list-group-item list-group-item-action list-group-item-primary">marca: '.$product['brand'].' Unidad: '.$product['unit'].' Precio: '.$product['price_unit'].' proveedor: '.$product['provider'].' presentacion: '.$product['presentation'].' precio en oferta: '.$product['promocion'].'</span>';
-    }else{
-        echo '<span class="list-group-item list-group-item-action list-group-item-secondary">marca: '.$product['brand'].' Unidad: '.$product['unit'].' Precio: '.$product['price_unit'].' proveedor: '.$product['provider'].' presentacion: '.$product['presentation'].' precio en oferta: '.$product['promocion'].'</span>';
-    }
-    
-endforeach
+    ?>
+        <tr>
+            <th scope='row'><?php echo $product['brand'];?></th>
+            <td><?php echo $product['unit']; ?></td>
+            <td><?php echo number_format($product['price_unit'], 2, ',', '.'); ?></td>
+            <td><?php echo $product['provider']; ?></td>
+            <td><?php echo $product['presentation']; ?></td>
+            <td><?php echo number_format($product['promocion'], 2, ',', '.') ?></td>
+        </tr>
+<?php endforeach
 ?>
-</div>
+    </tbody>
+</table>
