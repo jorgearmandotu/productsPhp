@@ -42,10 +42,7 @@ class Products extends CI_Controller {
         $this->load->library('form_validation');
         
 
-        $this->form_validation->set_rules('product', 'el producto ', 'required');
-        $this->form_validation->set_rules('brand', 'la marca', 'required');
-        $this->form_validation->set_rules('provider', 'el proveedor', 'required');
-        $this->form_validation->set_rules('presentation', 'la presentacion', 'required');
+        $this->form_validation->set_rules('id', 'el id de precio ', 'required');
         //$this->form_validation->set_rules('price_unit', 'la presentacion', 'required');
         //$this->form_validation->set_rules('promocion', 'la presentacion', 'required');
 

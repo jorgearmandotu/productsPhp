@@ -24,10 +24,7 @@ foreach($product_item as $product):
         </tr>
         <tr>
         <?php echo form_open('products/view/'.$product['idProduct']) ?>
-        <input name='brand' type='hidden' value='<?php echo $product['idBrand'] ?>'>
-        <input name='presentation' type='hidden' value='<?php echo $product['idPresentation'] ?>'>
-        <input name='provider' type='hidden' value='<?php echo $product['idProvider'] ?>'>
-        <input name='product' type='hidden' value='<?php echo $product['idProduct'] ?>'>
+        <input name='id' type='hidden' value='<?php echo $product['id'] ?>'>
         
         <td><label for='price_unit' class='form-label'>Precio:</label></td>
         <td><input type='number' name='price_unit' class='form-control form-control-sm'></td>

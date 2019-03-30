@@ -101,10 +101,7 @@ class Products_model extends CI_Model{
             );
         }
         $dataWhere = array(
-            'product'=> $this->input->post('product'),
-            'brand'=> $this->input->post('brand'),
-            'provider'=> $this->input->post('provider'),
-            'presentation'=> $this->input->post('presentation'),
+            'id'=> $this->input->post('id'),
         );
         $this->db->where($dataWhere);
         return $this->db->update('prices', $data);

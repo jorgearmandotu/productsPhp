@@ -34,9 +34,9 @@ echo form_open('prices/create','class=""');
             <?php endforeach ?>
         </select>
     </div>
-    <div class='col-auto'>
+   <!-- <div class='col-auto'>
         <button type='button' class='btn btn-info btn-sm' data-toggle="modal" data-target="#presentation" >nuevo</button>
-    </div>
+    </div> -->
     <div class='col-auto'>
         <button type='button' class='btn btn-success btn-sm' onclick = "location.reload();">reload</button>
     </div>
@@ -134,8 +134,11 @@ echo form_open('presentation/create');
 </div>
 
 <div class='form-row'>
-    <div class='col-sm-5'>
+    <div class='col-auto'>
         <input type='submit' name='submit' value='Agregar presentacion' class='btn btn-primary btn-sm btn-block' />
+    </div>
+    <div class='col-auto'>
+        <button type='button' class='btn btn-success btn-sm btn-block' onclick = "location.reload();">reload</button>
     </div>
 </div>
 </form>
@@ -153,8 +156,11 @@ echo form_open('brand/create');
     </div>
 </div>
 <div class='form-row'>
-    <div class='col-sm-5'>
-        <input type='submit' name='submit' value='Crear' class='btn btn-primary btn-sm btn-block' />
+    <div class='col-auto'>
+        <input type='submit' name='submit' value='Agregar Marca' class='btn btn-primary btn-sm btn-block' />
+    </div>
+    <div class='col-auto'>
+        <button type='button' class='btn btn-success btn-sm btn-block' onclick = "location.reload();">reload</button>
     </div>
 </div>
 </form>
