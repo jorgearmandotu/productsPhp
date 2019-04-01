@@ -34,11 +34,11 @@ echo form_open('prices/create','class=""');
             <?php endforeach ?>
         </select>
     </div>
-   <!-- <div class='col-auto'>
+    <!-- <div class='col-auto'>
         <button type='button' class='btn btn-info btn-sm' data-toggle="modal" data-target="#presentation" >nuevo</button>
     </div> -->
     <div class='col-auto'>
-        <button type='button' class='btn btn-success btn-sm' onclick = "location.reload();">reload</button>
+        <a href="<?php echo site_url('prices/create')?>"><button type='button' class='btn btn-success btn-sm'>reload</button></a>
     </div>
     </div>
     
@@ -104,7 +104,7 @@ echo form_open('prices/create','class=""');
       <div class="modal-body">
         <?php
         echo '<h3>'.validation_errors().'</h3>';
-        echo form_open('presentation/create', 'class="form-inline"');
+        echo form_open( site_url('presentation/create'), 'class="form-inline"');
         ?>
                 <label for='presentation'>Presentacion: </label>
                 <input type='text' name='presentation' class='form-control' />
@@ -138,7 +138,7 @@ echo form_open('presentation/create');
         <input type='submit' name='submit' value='Agregar presentacion' class='btn btn-primary btn-sm btn-block' />
     </div>
     <div class='col-auto'>
-        <button type='button' class='btn btn-success btn-sm btn-block' onclick = "location.reload();">reload</button>
+        <a href="<?php echo site_url('prices/create')?>"><button type='button' class='btn btn-success btn-sm btn-block'>reload</button></a>
     </div>
 </div>
 </form>
@@ -160,7 +160,7 @@ echo form_open('brand/create');
         <input type='submit' name='submit' value='Agregar Marca' class='btn btn-primary btn-sm btn-block' />
     </div>
     <div class='col-auto'>
-        <button type='button' class='btn btn-success btn-sm btn-block' onclick = "location.reload();">reload</button>
+        <a href="<?php echo site_url('prices/create')?>" ><button type='button' class='btn btn-success btn-sm btn-block'>reload</button></a>
     </div>
 </div>
 </form>
